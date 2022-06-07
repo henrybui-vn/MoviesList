@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMoviePoster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivMoviePoster"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tvMovieYear"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivMoviePoster"
+                app:layout_constraintWidth_percent="0.3" />
+
+            <FrameLayout
+                android:id="@+id/layoutMovieIMDB"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivMoviePoster"
+                app:layout_constraintWidth_percent="0.3">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMovieIMDB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableStart="@drawable/ic_rate"
+                    android:drawablePadding="8dp"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieRuntime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/layoutMovieIMDB"
+                app:layout_constraintStart_toEndOf="@id/tvMovieCategory"
+                app:layout_constraintTop_toBottomOf="@id/ivMoviePoster" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieSynopsis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:text="@string/synopsis"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieCategory" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieSynopsisContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieSynopsis" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:text="@string/score"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieSynopsisContent"
+                app:layout_constraintWidth_percent="0.3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMoviePopularity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:text="@string/popularity"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieSynopsisContent"
+                app:layout_constraintWidth_percent="0.3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieReviews"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:text="@string/reviews"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvMoviePopularity"
+                app:layout_constraintStart_toEndOf="@id/tvMovieScore"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieSynopsisContent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieScorePoint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:layout_marginVertical="8dp"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieScore"
+                app:layout_constraintWidth_percent="0.3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMoviePopularityPoint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:layout_marginVertical="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieScore"
+                app:layout_constraintWidth_percent="0.3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieReviewsPoint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_default"
+                android:layout_marginVertical="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/tvMoviePopularity"
+                app:layout_constraintStart_toEndOf="@id/tvMovieScore"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieScore" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_default"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieScorePoint" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDirector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginTop="32sp"
+                android:text="@string/director"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieScorePoint" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDirectorName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginEnd="@dimen/margin_default"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvDirector"
+                app:layout_constraintTop_toTopOf="@id/tvDirector" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWriter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:layout_marginTop="8dp"
+                android:text="@string/writer"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDirectorName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWriterName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvDirector"
+                app:layout_constraintTop_toBottomOf="@id/tvDirectorName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvActors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:layout_marginTop="8dp"
+                android:text="@string/actors"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvWriterName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvActorsName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvDirector"
+                app:layout_constraintTop_toBottomOf="@id/tvWriterName" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.core.widget.NestedScrollView>

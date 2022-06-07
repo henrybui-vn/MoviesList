@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MoviesList</string>
+    <string name="search">Search</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="reviews">Reviews</string>
+    <string name="score">Score</string>
+    <string name="popularity">Popularity</string>
+    <string name="director">Director</string>
+    <string name="writer">Writer</string>
+    <string name="actors">Actors</string>
+</resources>
